@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+{% block content %}
+
+<H1 align = "center"> NEAT LIBRARY SIGN UP PAGE!!!!!!!!</H1>
+	<em><h3> sign up to enjoy our services  </h3></em>
+<form method="POST" >
+	{% csrf_token %}
+	{% for field in form %}
+	<p>
+		{{field.label_tag}}<br>
+		{{field }}
+		{% if field.help_text %}
+		<small style="color: grey"> {{field.help_text}} </small>
+		{% endif %}
+		{% for error in field.errors %}
+		<p style="colr: red" >{{ error }}</p>
+		{% endfor %}
+
+	</p>
+	{%endfor %}
+
+	<input type="text" name="">
+<button type="submit" >Sign up</button>
+
+</form>
+{% endblock %}

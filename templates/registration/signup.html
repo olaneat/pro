@@ -1,0 +1,13 @@
+{% extends "base_generic.html "%}
+{% block content %}
+
+<p> kindly fill the Sign up form below</p>
+<form method="POST" >
+	{% crsf_form %}
+	{% form.as_p %
+
+	<input type="text" name="">
+<button type="submit" >Sign up</button>
+
+</form>
+{% endblock %}

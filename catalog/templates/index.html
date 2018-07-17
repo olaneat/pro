@@ -1,0 +1,16 @@
+
+{% extends "base_generic.html" %}
+{% block content %}
+<h1>NEAT LIBRARY HOME </h1>
+<p>Welcome to <em>Neat Library, </em> a very classic library with collection of all modern day books</p>
+<h2>Dynamic contents</h2>
+<p>The Library has the following collection </p>
+<ul>
+	<li><strong>Books: </strong>{{num_books}}</li>
+	<li><strong>Copies: </strong> {{num_instances}} </li>
+	<li><strong>Copies Available: </strong> {{num_instances_available}} </li>
+	<li><strong>Authors:</strong> {{ num_authors }} </li>
+</ul>
+
+<p>you have visited this site {{num_visits }} {% if num_visits == 1 %}time {%else %}times{% endif %} </p>
+{% endblock %}
