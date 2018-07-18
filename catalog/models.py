@@ -99,7 +99,7 @@ class profile(models.Model):
 	email_confirm =  models.BooleanField(default = False)
 
 @receiver(post_save, sender = User)
-def update_user_profile(sender, instance, creted, **kwargs):
-	if creted:
+def update_user_profile(sender, instance, created, **kwargs):
+	if created:
 		profile.objects.create(user = instance)
 	instance.profile.save()
