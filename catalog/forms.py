@@ -25,11 +25,12 @@ class RenewBookForm(forms.Form):
 
 
 class SignUpForm(UserCreationForm):
-    first_name = forms.CharField(max_length = 50, required = True, help_text = 'Optional')
-    surname = forms.CharField(max_length = 50, required = True, help_text = 'Optional')
+    birth_date = forms.DateField(help_text = ' Required format : YYYY-MM-DD')
+    first_name = forms.CharField(max_length = 50, required = True)
+    surname = forms.CharField(max_length = 50, required = True )
     email = forms.EmailField(max_length = 300, help_text = 'Reqired. provide a valid email address') 
     #password = forms.CharField(widget = forms.PasswordInput)
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'surname', 'email', 'password1', 'password2')
+        fields = ('username', 'first_name', 'surname', 'birth_date', 'email', 'password1', 'password2')

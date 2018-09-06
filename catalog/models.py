@@ -20,6 +20,7 @@ class Book(models.Model):
 	author = models.ForeignKey('Author', on_delete = models.SET_NULL, null = True)
 	genre = models.ManyToManyField(Genre, help_text = 'Enter the Genre for the book')
 	summary = models.TextField(max_length = 1000, help_text = 'enter the book is brief summary')
+	upload = models.FileField(upload_to = 'uploads', default =  True)
 	isbn = models.CharField(max_length = 15, help_text = '13 Character <a href="https://www.isbn-international.org/content/what-isbn">ISBN number</a>')
 	#dialet = models.ForeignKey('Language', on_delete = models.SET_NULL, null = True)
 
@@ -94,12 +95,29 @@ class Language(models.Model):
 
 	def __str__(self):
 		return self.local_dialet
+
+
 class profile(models.Model):
 	user  = models.OneToOneField(User, on_delete = models.CASCADE)
+	bio = models.TextField(max_length = 1000, blank = True)
+	location = models.CharField(max_length = 30, blank = True)
+	birth_date =  models.DateField(null = False)
 	email_confirm =  models.BooleanField(default = False)
+0
+
 
 @receiver(post_save, sender = User)
-def update_user_profile(sender, instance, creted, **kwargs):
-	if creted:
+def create_user_profile(sender,  instance, created, **kwargs):
+	if created:
 		profile.objects.create(user = instance)
-	instance.profile.save()
+	
+#def update_user_profile(sender, instance, creted, **kwargs):
+#	if created:
+#		profile.objects.create(user = instance)
+
+
+#@receiver(post_save, sender = User)
+#def save_user_profiles(sender, profile, **kwargs):
+#	instance.profile.save()
+
+

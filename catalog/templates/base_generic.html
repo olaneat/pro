@@ -1,38 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-{% block title %}<title>Neat Library</title>{% endblock %}
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-  <!-- Add additional CSS in static file -->
   {% load static %}
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% block title %}
+<title>Neat Library</title>
+
+<div class="container"> 
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Neat Library</h1>
+     </div>
+     <div class=" col-md-3 col-md-offset-3">
+        <div class="social-icons">
+          <button class="btn btn-fb" type="button"><i class="fa fa-facebook pr-1"></i>F</button> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <ul class="nav nav-pills nav-justified">
+        <li><a href=" {% url 'index' %} "><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href=" {% url 'books' %} ">Services</a></li>
+        <li><a href="  ">Students</a>
+            
+        </li>
+        <li class="dropdown"><a href=" {% url 'staff' %} " class="dropdown-toggle" data-toggleclass="dropdown"> Staffs <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li></li>
+          </ul>
+
+
+
+
+
+        </li>
+        <li><a href="  "> <span class="glyphicon glyphicon-earphone"></span> contact</a></li>
+
+
+      </ul>
+    </div>
+    <div class="col-md-3">
+      <div class="col-md-offset-3">
+        <div class="input-group">
+          <input type="text" placeholder="QuickSearch" class="form-control">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+          </span>
+          
+        </div>
+         
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+    
+  </div>
+</nav>
+
+
+
+
+
+
+{% endblock %}
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+    <link rel="stylesheet" href="{% static 'css/styles1.css' %}">
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{% static 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' %}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  
 </head>
 
-{% load static %}
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 
 <body>
 
   <div class="container-fluid">
 
-    <div class="row">
+     <div class="row">
       <div class="col-sm-2">
       {% block sidebar %}
       <ul class="sidebar-nav">
      
-          <li><a href="{% url 'index' %}">Home</a></li>
-         <li><a href="{% url 'books' %}">All books</a></li>
-          <li><a href="">All authors</a></li>
-          <hr>
-          <hr>
+          
+          
          <li><a href=" {% url 'signup' %} ">SignUp</a></li>
            <hr>
            {% if user.is_authenticated %}
@@ -42,9 +117,7 @@
    {% else %}
      <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>   
    {% endif %}
-   <hr>
-     <li><a href=" {% url 'staff' %} ">Staffs</a></li>
-
+ 
  
 
       </ul>

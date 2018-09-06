@@ -1,0 +1,6 @@
+{% extends "base_generic.html" %}
+{% autoescape off %}
+HI {{user.username}} !!!,
+<p>Kindly check your mail to activate your account and complete your registration !</p>
+http:// {{domain }}{% url 'activate'uidb64  = uid  token = token %}
+{% endautoescape %}
