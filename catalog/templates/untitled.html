@@ -1,0 +1,88 @@
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-togglee="collapse" >
+      <span class="icon-bar"></span>
+    </button>
+    </div>
+    <div class="navbar-collapse collapse" >
+      <ul class="nav navbar-nav">
+        <li><a href="{% url 'index' %}">Home</a></li>
+         <li><a href="{% url 'books' %}">All books</a></li>
+         <li><a href="{% static url 'Authors' %}">All Authors</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+  <div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <ul class="nav nav-pills nav-justified">
+        <li><a href=" {% url 'index' %} "><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href=" {% url 'books' %} ">All Books</a></li>
+        <li><a href="  ">Services</a></li>
+        <li><a href=" {% url 'staff' %} ">Staffs</a></li>
+        <li><a href="  "> <span class="glyphicon glyphicon-earphone"></span> contact</a></li>
+
+
+      </ul>
+    </div>
+    <div class="col-md-3">
+      <div class="col-md-offset-3">
+        <div class="input-group">
+          <input type="text" placeholder="QuickSearch" class="form-control">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default">search</button>
+          </span>
+          
+        </div>
+         
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<nav class="navbar navbar-default">
+ 
+    <div class="row">
+      <div class="col-md-6">
+         <div class="navbar-header">
+            <button type="button" data-target=".navbar-collapse" class="navbar-toggle" data-toggle="collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav nav-pills nav-justified">
+            <li><a href=" {% url 'index' %} "><span class="glyphicon glyphicon-home"></span> Home</a></li>
+            <li><a href=" {% url 'books' %} ">All Books</a></li>
+            <li><a href="  ">Students</a></li>
+            <li><a href=" {% url 'staff' %} ">Staffs</a></li>
+            <li><a href="  "> <span class="glyphicon glyphicon-earphone"></span> contact</a></li>
+
+
+          </ul>
+        </div> 
+      </div>
+     
+      <form class="navbar-form navbar-left" role="seach">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="QuickSearch...">
+        </div>
+        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+      </form>
+      
+      
+    </div>
+  </div>
+</nav>

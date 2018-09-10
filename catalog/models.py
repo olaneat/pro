@@ -103,21 +103,3 @@ class profile(models.Model):
 	location = models.CharField(max_length = 30, blank = True)
 	birth_date =  models.DateField(null = False)
 	email_confirm =  models.BooleanField(default = False)
-0
-
-
-@receiver(post_save, sender = User)
-def create_user_profile(sender,  instance, created, **kwargs):
-	if created:
-		profile.objects.create(user = instance)
-	
-#def update_user_profile(sender, instance, creted, **kwargs):
-#	if created:
-#		profile.objects.create(user = instance)
-
-
-#@receiver(post_save, sender = User)
-#def save_user_profiles(sender, profile, **kwargs):
-#	instance.profile.save()
-
-
